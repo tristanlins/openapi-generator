@@ -45,6 +45,7 @@ elif [ "$NODE_INDEX" = "2" ]; then
   # install PHP
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78BD65473CB3BD13
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E6910DFCB68C9CD
   sudo apt-get install -y language-pack-en-base &&
   export LC_ALL=en_US.UTF-8 &&
   export LANG=en_US.UTF-8 &&
