@@ -1427,6 +1427,7 @@
             </activation>
             <modules>
                 <!-- clients -->
+                <module>samples/client/petstore/php/OpenAPIClient-php</module>
                 <module>samples/client/petstore/R</module>
                 <!--<module>samples/client/petstore/haskell-http-client</module>-->
                 <!-- servers -->
