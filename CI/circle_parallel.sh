@@ -43,10 +43,13 @@ elif [ "$NODE_INDEX" = "2" ]; then
   sudo apt-get -y install libcurl4-gnutls-dev
 
   # install PHP
-  sudo apt install software-properties-common
-  sudo add-apt-repository ppa:ondrej/php
+  sudo apt-get install -y language-pack-en-base &&
+  export LC_ALL=en_US.UTF-8 &&
+  export LANG=en_US.UTF-8 &&
+  sudo apt install -y software-properties-common
+  sudo add-apt-repository -y ppa:ondrej/php
   sudo apt update
-  sudo apt install php8.1 php8.1-common php8.1-curl
+  sudo apt install -y php8.1 php8.1-common php8.1-curl
   curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
   # Install golang version 1.14
