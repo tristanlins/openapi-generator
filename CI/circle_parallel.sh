@@ -25,7 +25,7 @@ if [ "$NODE_INDEX" = "1" ]; then
   mvn --no-snapshot-updates --quiet verify -Psamples.circleci -Dorg.slf4j.simpleLogger.defaultLogLevel=error
 
 elif [ "$NODE_INDEX" = "2" ]; then
-  echo "Running node $NODE_INDEX to test haskell"
+  echo "Running node $NODE_INDEX to test R, Go"
   # install haskell
   #curl -sSLk https://get.haskellstack.org/ | sh
   #stack upgrade
@@ -41,6 +41,13 @@ elif [ "$NODE_INDEX" = "2" ]; then
   # install curl
   sudo apt-get -y build-dep libcurl4-gnutls-dev
   sudo apt-get -y install libcurl4-gnutls-dev
+
+  # install PHP
+  sudo apt install software-properties-common
+  sudo add-apt-repository ppa:ondrej/php
+  sudo apt update
+  sudo apt install php8.1 php8.1-common php8.1-curl
+  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
   # Install golang version 1.14
   go version
